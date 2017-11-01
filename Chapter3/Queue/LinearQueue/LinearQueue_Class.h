@@ -12,6 +12,11 @@ public:
     bool IsFull(){return (front==(rear+1)%(MaxSpaceSize+1)?1:0);};
     bool GetFront(QueueType &result);
     bool GetRear(QueueType &result);
+    int  GetFrontAddress(){return front;};
+    int  GetRearAddress(){return rear;};
+    int  GetMaxSpaceSize(){return MaxSpaceSize;};
+    
+    bool GetElement(int k,QueueType& result);
     bool EnQueue(QueueType &newvalue);  //进队，从rear所指的位置后面添加
     bool DeQueue(QueueType &result);    //出队，从front指针所指的后面一个位置取出数据
 };
@@ -54,5 +59,12 @@ DeQueue(QueueType &result){
     if(IsEmpty()) return false;
     front=(front+1)%(MaxSpaceSize+1);  //front指针移动到下一个位置
     result=element[front];             //result为刚刚出队的元素值
+    return true;
+}
+template<class QueueType>
+bool Queue<QueueType>::
+GetElement(int k,QueueType& result)
+{
+    result=element[k];
     return true;
 }
