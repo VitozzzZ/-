@@ -75,6 +75,7 @@ bool RearrangementTrack(int CarriageNumber[],
     for(int i=1;i<=CarriageQuantity;i++){
         //对入轨上的队列QueueIn进行初始化，数据来自于CarriageNumber[]
         result.CarriageNumber=CarriageNumber[i];
+        QueueIn.EnQueue(result);
     }
     Queue<ElementType>QueueOut(MaxQueueSize);
     Queue<ElementType> *QueueHold=new Queue<ElementType>[HoldQueueQuantity];
