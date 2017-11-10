@@ -47,7 +47,7 @@ void Output(Queue<ElementType> *QueueHold,
             Queue<ElementType> &QueueIn,
             Queue<ElementType> &QueueOut,
             int CarriageQuantity,int HoldQueueQuantity,
-            int &MinHold,int MinQueue,int &Nowout){
+            int &MinHold,int &MinQueue,int &Nowout){
     //从MinQueue中输出最小车厢MinHold，并寻找新的最小的MinHold和MinQueue
     int current;
     ElementType temp;
